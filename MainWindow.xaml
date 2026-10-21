@@ -1,0 +1,67 @@
+<Window x:Class="MusicPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicPlayer"
+        Width="1200"
+        Height="600"
+        Background="#FF3F3F3F"
+        Title="Perrynox.SIM"
+        mc:Ignorable="d">
+  <Grid RenderTransformOrigin="0.438,0.5239">
+    <Label Width="915"
+           Height="326"
+           Margin="249,75,0,0"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Top"
+           Background="#FF333333"
+           FontSize="30"
+           Foreground="#FFBF2626"
+           Grid.Column="0"
+           Grid.ColumnSpan="2"
+           Grid.Row="0">
+      <Label.BorderBrush>
+        <RadialGradientBrush>
+          <RadialGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#FF191919" />
+            <GradientStop Offset="1" Color="#FFFFFFFF" />
+          </RadialGradientBrush.GradientStops>
+        </RadialGradientBrush>
+      </Label.BorderBrush>
+    </Label>
+    <Button Content="+"
+            Width="98"
+            Height="96"
+            Margin="73.03999999999996,91,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            Background="#FF262020"
+            BorderBrush="#FF212121"
+            Click="Button_Click"
+            FontFamily="Verdana"
+            FontSize="50"
+            Foreground="White"
+            RenderTransformOrigin="0.5204,0.5"
+            Grid.Column="1"
+            Grid.Row="0" />
+    <TextBox Width="166"
+             Height="44"
+             Margin="249,31,0,0"
+             HorizontalAlignment="Left"
+             VerticalAlignment="Top"
+             Background="#FF3F3F3F"
+             BorderBrush="#FF3F3F3F"
+             FontFamily="Century Gothic"
+             FontSize="25"
+             FontWeight="Normal"
+             Text="Your Albums"
+             Grid.Column="0"
+             Grid.Row="0" />
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="0.8218151260504202*" />
+      <ColumnDefinition Width="0.17818487394957983*" />
+    </Grid.ColumnDefinitions>
+  </Grid>
+</Window>
