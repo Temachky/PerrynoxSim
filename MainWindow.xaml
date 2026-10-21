@@ -9,59 +9,66 @@
         Background="#FF3F3F3F"
         Title="Perrynox.SIM"
         mc:Ignorable="d">
-  <Grid RenderTransformOrigin="0.438,0.5239">
-    <Label Width="915"
-           Height="326"
-           Margin="249,75,0,0"
+  <Window.BorderBrush>
+    <RadialGradientBrush>
+      <RadialGradientBrush.GradientStops>
+        <GradientStop Offset="0" Color="#FF686868" />
+        <GradientStop Offset="1" Color="#FFFFFFFF" />
+      </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+  </Window.BorderBrush>
+  <Grid Width="1193"
+        Height="569"
+        Margin="15,0,0,0"
+        RenderTransformOrigin="0.4514,0.4824">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="0.38448566610455315*" />
+      <ColumnDefinition Width="1.9593483705304708*" />
+      <ColumnDefinition Width="0.6556962025316455*" />
+    </Grid.ColumnDefinitions>
+    <Grid Width="743"
+          Height="373"
+          Margin="18,82,0,0"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top"
+          Background="#FF2D2D2D"
+          RenderTransformOrigin="0.5,0.48"
+          x:Name="AlbumPick"
+          Grid.Column="1"
+          Grid.Row="0">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition />
+      </Grid.RowDefinitions>
+      <Button Content="+"
+              Width="151"
+              Height="150"
+              Margin="17,18,0,0"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top"
+              Background="#FF333333"
+              BorderBrush="#FF494545"
+              FontFamily="Century Gothic"
+              Click="Button_Click"
+              FontSize="70"
+              Grid.Column="3"
+              Grid.Row="0" />
+    </Grid>
+    <Label Content="Your albums:"
+           Width="175"
+           Height="48"
+           Margin="22,34,0,0"
            HorizontalAlignment="Left"
            VerticalAlignment="Top"
-           Background="#FF333333"
-           FontSize="30"
-           Foreground="#FFBF2626"
-           Grid.Column="0"
-           Grid.ColumnSpan="2"
-           Grid.Row="0">
-      <Label.BorderBrush>
-        <RadialGradientBrush>
-          <RadialGradientBrush.GradientStops>
-            <GradientStop Offset="0" Color="#FF191919" />
-            <GradientStop Offset="1" Color="#FFFFFFFF" />
-          </RadialGradientBrush.GradientStops>
-        </RadialGradientBrush>
-      </Label.BorderBrush>
-    </Label>
-    <Button Content="+"
-            Width="98"
-            Height="96"
-            Margin="73.03999999999996,91,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            HorizontalContentAlignment="Center"
-            Background="#FF262020"
-            BorderBrush="#FF212121"
-            Click="Button_Click"
-            FontFamily="Verdana"
-            FontSize="50"
-            Foreground="White"
-            RenderTransformOrigin="0.5204,0.5"
-            Grid.Column="1"
-            Grid.Row="0" />
-    <TextBox Width="166"
-             Height="44"
-             Margin="249,31,0,0"
-             HorizontalAlignment="Left"
-             VerticalAlignment="Top"
-             Background="#FF3F3F3F"
-             BorderBrush="#FF3F3F3F"
-             FontFamily="Century Gothic"
-             FontSize="25"
-             FontWeight="Normal"
-             Text="Your Albums"
-             Grid.Column="0"
-             Grid.Row="0" />
-    <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="0.8218151260504202*" />
-      <ColumnDefinition Width="0.17818487394957983*" />
-    </Grid.ColumnDefinitions>
+           FontFamily="Century Gothic"
+           FontSize="25"
+           Grid.Column="1"
+           Grid.Row="0" />
   </Grid>
 </Window>

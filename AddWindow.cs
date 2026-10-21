@@ -64,17 +64,31 @@ namespace MusicPlayer
         private bool IsImageFile(string filePath)
         {
             string ext = Path.GetExtension(filePath).ToLower();
-            return ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".bmp";
+            return ext == ".png" ;
         }
 
         public void Create(object sender, RoutedEventArgs e)
         {  
            string name = AlbumNameTextBox.Text;
+        //    путь к папке
            string path = Path.Combine(MainWindow.fullPath, name);
            Directory.CreateDirectory(path);
            Album album = new Album(name, (BitmapImage) AlbumCoverImage.Source, new DirectoryInfo(path));
            AlbumManager.albums.Add(name, album);
-           Close();
+        // путь к картинке   
+           string imagePath = Path.Combine(path + @"\" + name + ".png");
+
+           if(AlbumCoverImage.Source != null) {
+              PngBitmapEncoder encoder = new PngBitmapEncoder();
+              encoder.Frames.Add(BitmapFrame.Create((BitmapSource)AlbumCoverImage.Source));
+
+              using(FileStream stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    encoder.Save(stream);
+                }
+             }
+
+            Close(); 
         }
     }
 }

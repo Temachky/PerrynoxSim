@@ -9,6 +9,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.IO;
 
+
 namespace MusicPlayer;
 
 /// <summary>
@@ -28,11 +29,34 @@ public partial class MainWindow : Window
       {  
         Directory.CreateDirectory(fullPath);
       }
-        InitializeComponent();
+
+      InitializeComponent();
     }
     private void Button_Click(object sender, RoutedEventArgs e)
     {
        AddWindow add = new AddWindow();
        add.ShowDialog();
     }
+
+    public void LoadAlbum()
+  {
+     DirectoryInfo dir = new DirectoryInfo(fullPath);
+     DirectoryInfo[] dires = dir.GetDirectories();
+
+     foreach(DirectoryInfo pap in dires)
+    {
+      FileInfo[] files = pap.GetFiles();
+       
+       foreach(FileInfo file in files)
+      {
+        if(String.Equals(file.Extension,".png"))
+        {
+           Button album = new Button();
+           album.Name = Path.GetFileNameWithoutExtension(file.Name);
+          
+           
+        }
+      }
+    }
+  }
 }
