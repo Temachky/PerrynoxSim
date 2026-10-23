@@ -18,6 +18,7 @@
     </RadialGradientBrush>
   </Window.BorderBrush>
   <Grid Width="1193"
+        x:Name="okak"
         Height="569"
         Margin="15,0,0,0"
         RenderTransformOrigin="0.4514,0.4824">

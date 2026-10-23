@@ -31,6 +31,8 @@ public partial class MainWindow : Window
       }
 
       InitializeComponent();
+
+       LoadAlbum();
     }
     private void Button_Click(object sender, RoutedEventArgs e)
     {
@@ -40,6 +42,7 @@ public partial class MainWindow : Window
 
     public void LoadAlbum()
   {
+     BrushConverter x = new BrushConverter();
      DirectoryInfo dir = new DirectoryInfo(fullPath);
      DirectoryInfo[] dires = dir.GetDirectories();
 
@@ -49,11 +52,17 @@ public partial class MainWindow : Window
        
        foreach(FileInfo file in files)
       {
-        if(String.Equals(file.Extension,".png"))
+        if(String.Equals(file.Extension,".png", StringComparison.OrdinalIgnoreCase))
         {
            Button album = new Button();
            album.Name = Path.GetFileNameWithoutExtension(file.Name);
-          
+           album.Margin = new Thickness(5);
+           album.Height = 150;
+           album.Width = 151;
+           album.Background = (Brush)x.ConvertFrom("#FF5733");
+           Grid.SetRow(album, 1);
+           Grid.SetColumn(album, 1);
+           AlbumPick.Children.Add(album);
            
         }
       }
